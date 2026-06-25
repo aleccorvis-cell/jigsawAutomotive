@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — Jigsaw Automotive Group</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="../assets/images/logo.png">
+  <link rel="preload" href="../assets/fonts/inter/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+  <header class="admin-header">
+    <div class="admin-header__inner">
+      <div class="admin-header__brand">
+        <img src="../assets/images/logo.png" alt="Jigsaw Automotive Group" height="32" class="admin-logo">
+        <span class="admin-header__title">Content Management System</span>
+      </div>
+      <a href="../index.html" class="btn btn--outline btn--sm">Zur Website</a>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <div class="admin-container">
+      <div class="admin-grid">
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar">
+          <nav class="admin-nav" role="navigation" aria-label="CMS Navigation">
+            <button class="admin-nav__btn active" data-tab="modules">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" /></svg>
+              Module verwalten
+            </button>
+            <button class="admin-nav__btn" data-tab="content">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" /></svg>
+              Inhalte bearbeiten
+            </button>
+            <button class="admin-nav__btn" data-tab="github">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" /></svg>
+              GitHub Sync
+            </button>
+          </nav>
+        </aside>
+
+        <!-- Content Area -->
+        <section class="admin-content" aria-label="Editor">
+          <form id="admin-form">
+            <!-- TAB: MODULES -->
+            <div class="admin-tab-content active" id="tab-modules">
+              <h2>Module aktivieren/deaktivieren</h2>
+              <p class="admin-section-desc">Aktivieren Sie die Module, die auf der Website angezeigt werden sollen. Inaktive Module werden auf allen Seiten ausgeblendet.</p>
+              
+              <div class="module-cards">
+                <label class="module-card">
+                  <input type="checkbox" name="module_hero" checked>
+                  <span class="module-card__checkbox"></span>
+                  <span class="module-card__info">
+                    <span class="module-card__title">Hero-Bereich</span>
+                    <span class="module-card__desc">Der Einstiegsbereich der Startseite mit Titelbild und Haupt-CTA.</span>
+                  </span>
+                </label>
+                
+                <label class="module-card">
+                  <input type="checkbox" name="module_trust" checked>
+                  <span class="module-card__checkbox"></span>
+                  <span class="module-card__info">
+                    <span class="module-card__title">Kennzahlen (Trust)</span>
+                    <span class="module-card__desc">Zeigt numerische Projekterfolge und Vertrauenselemente.</span>
+                  </span>
+                </label>
+
+                <label class="module-card">
+                  <input type="checkbox" name="module_ueber-uns" checked>
+                  <span class="module-card__checkbox"></span>
+                  <span class="module-card__info">
+                    <span class="module-card__title">Über uns</span>
+                    <span class="module-card__desc">Stellt Ihre Philosophie, Ihr Core-Business und Ihren Ansatz vor.</span>
+                  </span>
+                </label>
+
+                <label class="module-card">
+                  <input type="checkbox" name="module_leistungen" checked>
+                  <span class="module-card__checkbox"></span>
+                  <span class="module-card__info">
+                    <span class="module-card__title">Leistungen</span>
+                    <span class="module-card__desc">Übersicht über Ihr Portfolio in der Automobilbranche.</span>
+                  </span>
+                </label>
+
+                <label class="module-card">
+                  <input type="checkbox" name="module_team" checked>
+                  <span class="module-card__checkbox"></span>
+                  <span class="module-card__info">
+                    <span class="module-card__title">Team</span>
+                    <span class="module-card__desc">Das Berater-Team mit Puzzle-Masken.</span>
+                  </span>
+                </label>
+
+                <label class="module-card">
+                  <input type="checkbox" name="module_projekte" checked>
+                  <span class="module-card__checkbox"></span>
+                  <span class="module-card__info">
+                    <span class="module-card__title">Projekte</span>
+                    <span class="module-card__desc">Fallstudien und erfolgreich abgeschlossene Projekte.</span>
+                  </span>
+                </label>
+
+                <label class="module-card">
+                  <input type="checkbox" name="module_downloads" checked>
+                  <span class="module-card__checkbox"></span>
+                  <span class="module-card__info">
+                    <span class="module-card__title">Downloadbereich</span>
+                    <span class="module-card__desc">Bietet Besuchern Zugriff auf Factsheets und Portfolios.</span>
+                  </span>
+                </label>
+
+                <label class="module-card">
+                  <input type="checkbox" name="module_faq" checked>
+                  <span class="module-card__checkbox"></span>
+                  <span class="module-card__info">
+                    <span class="module-card__title">FAQ</span>
+                    <span class="module-card__desc">Häufig gestellte Fragen (Akkordeon).</span>
+                  </span>
+                </label>
+
+                <label class="module-card">
+                  <input type="checkbox" name="module_cta" checked>
+                  <span class="module-card__checkbox"></span>
+                  <span class="module-card__info">
+                    <span class="module-card__title">CTA-Banner</span>
+                    <span class="module-card__desc">Aufforderung zur Terminbuchung am Ende der Seiten.</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- TAB: CONTENT -->
+            <div class="admin-tab-content" id="tab-content">
+              <h2>Allgemeine Inhalte bearbeiten</h2>
+              <p class="admin-section-desc">Passen Sie die Texte, Kontaktdaten und Verweise der Website an.</p>
+              
+              <div class="form-section">
+                <h3>Firmendetails & Kontakt</h3>
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="company_name">Firmenname</label>
+                    <input type="text" id="company_name" name="company_name">
+                  </div>
+                  <div class="form-group">
+                    <label for="company_contact">Ansprechpartner</label>
+                    <input type="text" id="company_contact" name="company_contact">
+                  </div>
+                  <div class="form-group">
+                    <label for="company_email">E-Mail-Adresse</label>
+                    <input type="email" id="company_email" name="company_email">
+                  </div>
+                  <div class="form-group">
+                    <label for="company_phone">Telefonnummer</label>
+                    <input type="text" id="company_phone" name="company_phone">
+                  </div>
+                  <div class="form-group">
+                    <label for="company_address">Standort / Adresse</label>
+                    <input type="text" id="company_address" name="company_address">
+                  </div>
+                  <div class="form-group">
+                    <label for="company_branding">Branding-Hinweis (Footer)</label>
+                    <input type="text" id="company_branding" name="company_branding">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <h3>Hero-Bereich</h3>
+                <div class="form-group">
+                  <label for="hero_title">Hauptüberschrift (Hero)</label>
+                  <input type="text" id="hero_title" name="hero_title">
+                </div>
+                <div class="form-group">
+                  <label for="hero_subtitle">Unterüberschrift (Hero)</label>
+                  <textarea id="hero_subtitle" name="hero_subtitle" rows="3"></textarea>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <h3>Über uns</h3>
+                <div class="form-group">
+                  <label for="about_overline">Overline</label>
+                  <input type="text" id="about_overline" name="about_overline">
+                </div>
+                <div class="form-group">
+                  <label for="about_title">Überschrift</label>
+                  <input type="text" id="about_title" name="about_title">
+                </div>
+                <div class="form-group">
+                  <label for="about_lead">Einleitungstext (fett)</label>
+                  <textarea id="about_lead" name="about_lead" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="about_body">Haupttext</label>
+                  <textarea id="about_body" name="about_body" rows="4"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB: GITHUB SYNC -->
+            <div class="admin-tab-content" id="tab-github">
+              <h2>Direkte Veröffentlichung auf GitHub</h2>
+              <p class="admin-section-desc">Dieses Static CMS kann Änderungen direkt per API in Ihr GitHub-Repository einpflegen. Geben Sie dazu Ihre Zugangsdaten ein. Diese werden nur lokal im Browser verarbeitet.</p>
+              
+              <div class="form-section">
+                <h3>GitHub-Zugangsdaten (lokal gespeichert)</h3>
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="gh_token">GitHub Personal Access Token (PAT)</label>
+                    <input type="password" id="gh_token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+                    <small>Benötigt Schreibrechte auf das Repository (contents permission).</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="gh_owner">Repository Eigentümer (Username)</label>
+                    <input type="text" id="gh_owner" placeholder="z. B. ChristofChrappek">
+                  </div>
+                  <div class="form-group">
+                    <label for="gh_repo">Repository Name</label>
+                    <input type="text" id="gh_repo" placeholder="z. B. jigsaw-automotive">
+                  </div>
+                  <div class="form-group">
+                    <label for="gh_branch">Branch</label>
+                    <input type="text" id="gh_branch" placeholder="main" value="main">
+                  </div>
+                </div>
+              </div>
+
+              <div class="github-status" id="github-status-box" style="display:none;">
+                <div class="github-status__title" id="github-status-title">Status</div>
+                <div class="github-status__message" id="github-status-msg">Bereit zum Übertragen.</div>
+              </div>
+            </div>
+
+            <!-- Global Actions -->
+            <div class="admin-actions">
+              <button type="submit" class="btn btn--primary" id="btn-save">Änderungen lokal speichern</button>
+              <button type="button" class="btn btn--outline" id="btn-download">JSON-Konfiguration herunterladen</button>
+              <button type="button" class="btn btn--primary" id="btn-publish" style="display:none; background-color: #2da44e;">Auf GitHub veröffentlichen 🚀</button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="admin-footer">
+    <p>Admin Dashboard für Christof Chrappek — Jigsaw Automotive Group. &copy; 2026. Webdesign by Starmindsdesign by Alec 💻</p>
+  </footer>
+
+  <script src="admin.js"></script>
+</body>
+</html>

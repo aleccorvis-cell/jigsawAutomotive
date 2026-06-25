@@ -1,0 +1,61 @@
+{
+  "company": {
+    "name": "Jigsaw Automotive Group",
+    "contactPerson": "Christof Chrappek",
+    "email": "cchrappek@gmail.com",
+    "phone": "+41 78 239 53 62",
+    "address": "Zürich, Schweiz",
+    "brandingNotice": "Webdesign ist von Starmindsdesign by Alec 💻"
+  },
+  "modules": {
+    "hero": true,
+    "trust": true,
+    "ueber-uns": true,
+    "leistungen": true,
+    "team": true,
+    "projekte": true,
+    "downloads": true,
+    "faq": true,
+    "cta": true,
+    "testimonials": false
+  },
+  "hero": {
+    "title": "Präzision in Bewegung. Erfolg im Detail.",
+    "subtitle": "Jigsaw Automotive Group — Ihr strategischer Partner für Management, Beratung und Transformation in der Automobilbranche.",
+    "ctaPrimary": "Erstberatung vereinbaren",
+    "ctaSecondary": "Unsere Leistungen"
+  },
+  "trust": {
+    "stats": [
+      { "number": "15+", "label": "Jahre Erfahrung" },
+      { "number": "200+", "label": "Projekte" },
+      { "number": "50+", "label": "Kunden" },
+      { "number": "DACH", "label": "Marktpräsenz" }
+    ]
+  },
+  "ueberUns": {
+    "overline": "Über uns",
+    "title": "Präzision. Strategie. Ergebnis.",
+    "leadText": "Die Jigsaw Automotive Group steht für strategische Beratung und operative Exzellenz in der Automobilindustrie. Wie ein Puzzle verbinden wir die einzelnen Teile — Menschen, Prozesse und Technologie — zu einem schlüssigen Gesamtbild.",
+    "bodyText": "Unser Ansatz ist ganzheitlich: Wir analysieren, beraten und begleiten Unternehmen der Automobilbranche im DACH-Raum bei der Transformation, Prozessoptimierung und strategischen Neuausrichtung. Jedes Projektstück fügt sich in das grosse Ganze — und genau das macht den Unterschied.",
+    "ctaText": "Unser Team kennenlernen"
+  },
+  "downloads": {
+    "title": "Wissen & Ressourcen",
+    "subtitle": "Laden Sie aktuelle Factsheets und Arbeitsproben herunter.",
+    "items": [
+      {
+        "id": "factsheet",
+        "title": "Factsheet & Leistungsportfolio",
+        "desc": "Kompakte Übersicht unserer Kernkompetenzen, Beratungsansätze und Projektreferenzen (PDF).",
+        "filename": "Jigsaw_Automotive_Portfolio.pdf"
+      },
+      {
+        "id": "case-study",
+        "title": "Case Study: Digitale Transformation",
+        "desc": "Wie wir einen mittelständischen Zulieferer bei der Transformation begleitet haben (PDF).",
+        "filename": "Jigsaw_Case_Study_Transformation.pdf"
+      }
+    ]
+  }
+}

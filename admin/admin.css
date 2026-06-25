@@ -1,0 +1,371 @@
+/* =============================================
+   Jigsaw Automotive Group — CMS Admin Stylesheet
+   ============================================= */
+
+.admin-body {
+  background-color: #0f0f12;
+  color: #ededef;
+  font-family: var(--font-family);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.admin-header {
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: var(--space-4) 0;
+}
+
+.admin-header__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-header__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.admin-logo {
+  filter: brightness(0) invert(1);
+}
+
+.admin-header__title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-400);
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  padding-left: var(--space-4);
+}
+
+.admin-main {
+  flex: 1;
+  padding: var(--space-8) 0;
+}
+
+.admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .admin-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sidebar Navigation */
+.admin-sidebar {
+  background: rgba(26, 26, 31, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.admin-nav__btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: none;
+  border: none;
+  color: var(--color-gray-400);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.admin-nav__btn svg {
+  transition: transform 0.2s ease;
+}
+
+.admin-nav__btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-white);
+}
+
+.admin-nav__btn.active {
+  background: var(--color-red);
+  color: var(--color-white);
+}
+
+.admin-nav__btn.active:hover {
+  background: var(--color-red-dark);
+}
+
+/* Content Area */
+.admin-content {
+  background: rgba(26, 26, 31, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.admin-tab-content {
+  display: none;
+}
+
+.admin-tab-content.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.admin-tab-content h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-top: 0;
+  margin-bottom: var(--space-2);
+  color: var(--color-white);
+}
+
+.admin-section-desc {
+  color: var(--color-gray-400);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-8);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Module Grid */
+.module-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+
+.module-card {
+  display: flex;
+  gap: var(--space-4);
+  background: rgba(10, 10, 10, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.module-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.module-card input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.module-card__checkbox {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  margin-top: 2px;
+}
+
+.module-card input:checked ~ .module-card__checkbox {
+  border-color: var(--color-red);
+  background: var(--color-red);
+}
+
+.module-card__checkbox::after {
+  content: "";
+  display: none;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.module-card input:checked ~ .module-card__checkbox::after {
+  display: block;
+}
+
+.module-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.module-card__title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+}
+
+.module-card__desc {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-400);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Forms styling in Admin */
+.form-section {
+  background: rgba(10, 10, 10, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.form-section h3 {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  margin-top: 0;
+  margin-bottom: var(--space-5);
+  color: var(--color-red-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: var(--space-2);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+@media (max-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.admin-content .form-group {
+  margin-bottom: var(--space-4);
+  text-align: left;
+}
+
+.admin-content label {
+  display: block;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-300);
+  margin-bottom: var(--space-2);
+}
+
+.admin-content input[type="text"],
+.admin-content input[type="email"],
+.admin-content input[type="password"],
+.admin-content textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: #15151a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  color: var(--color-white);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.admin-content input:focus,
+.admin-content textarea:focus {
+  outline: none;
+  border-color: var(--color-red);
+  box-shadow: 0 0 0 2px rgba(196, 30, 58, 0.2);
+}
+
+.admin-actions {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: flex-end;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: var(--space-6);
+  margin-top: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.admin-footer {
+  background: #0a0a0a;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: var(--space-6) 0;
+  text-align: center;
+  color: var(--color-gray-500);
+  font-size: var(--font-size-xs);
+}
+
+/* GitHub Sync Status Card */
+.github-status {
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  margin-top: var(--space-6);
+  border: 1px solid transparent;
+}
+
+.github-status.success {
+  background: rgba(45, 164, 78, 0.1);
+  border-color: rgba(45, 164, 78, 0.2);
+  color: #56d364;
+}
+
+.github-status.error {
+  background: rgba(248, 81, 73, 0.1);
+  border-color: rgba(248, 81, 73, 0.2);
+  color: #ff7b72;
+}
+
+.github-status.pending {
+  background: rgba(240, 184, 0, 0.1);
+  border-color: rgba(240, 184, 0, 0.2);
+  color: #e3b341;
+}
+
+.github-status__title {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-1);
+}
+
+.github-status__message {
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-relaxed);
+}
